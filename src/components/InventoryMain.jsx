@@ -1,9 +1,9 @@
-import React from 'react';
-import model3 from '../assets/previews/model-3.png';
+import React from "react";
+import model3 from "../assets/previews/model-3.png";
 
 export default function InventoryMain(props) {
-  const [pickedType, setPickedType] = React.useState('');
-  const [pickedPrice, setPickedPrice] = React.useState('');
+  const [pickedType, setPickedType] = React.useState("");
+  const [pickedPrice, setPickedPrice] = React.useState("");
   const [additionPrice, setAdditionPrice] = React.useState(0);
   const [recipePrice, setRecipePrice] = React.useState(0);
   const [modesExpand, setModesExpand] = React.useState(false);
@@ -19,69 +19,69 @@ export default function InventoryMain(props) {
   }
 
   function initialClick() {
-    document.getElementById('initial-button').click();
+    document.getElementById("initial-button").click();
   }
 
   function recipeHandler(event) {
-    if (event.target.classList.contains('clicked')) {
-      event.target.classList.remove('clicked');
-      event.target.style.backgroundColor = 'rgb(37 99 235)';
-      event.target.style.color = 'white';
-      event.target.innerHTML = 'Add';
+    if (event.target.classList.contains("clicked")) {
+      event.target.classList.remove("clicked");
+      event.target.style.backgroundColor = "rgb(37 99 235)";
+      event.target.style.color = "white";
+      event.target.innerHTML = "Add";
       setRecipePrice((prev) => prev - 19);
     } else {
-      event.target.classList.add('clicked');
-      event.target.style.backgroundColor = 'rgb(229 231 235)';
-      event.target.style.color = 'rgb(31 41 55)';
-      event.target.innerHTML = 'Remove';
+      event.target.classList.add("clicked");
+      event.target.style.backgroundColor = "rgb(229 231 235)";
+      event.target.style.color = "rgb(31 41 55)";
+      event.target.innerHTML = "Remove";
       setRecipePrice((prev) => prev + 19);
     }
   }
 
   function additionPick(event) {
     if (
-      event.target.classList.contains('picked') ||
-      event.target.parentElement.classList.contains('picked')
+      event.target.classList.contains("picked") ||
+      event.target.parentElement.classList.contains("picked")
     ) {
-      if (event.target.classList.contains('price-increase')) {
-        event.target.parentElement.classList.remove('picked');
-        event.target.parentElement.classList.remove('picked-class');
+      if (event.target.classList.contains("price-increase")) {
+        event.target.parentElement.classList.remove("picked");
+        event.target.parentElement.classList.remove("picked-class");
       } else {
-        event.target.classList.remove('picked');
-        event.target.classList.remove('picked-class');
+        event.target.classList.remove("picked");
+        event.target.classList.remove("picked-class");
         switch (event.target.innerHTML) {
           case 'Cleaning Brushes<span class="price-increase">+$10</span>':
-          case '+$10':
+          case "+$10":
             setAdditionPrice((prev) => prev - 10);
             break;
           case '2L Blender Jar<span class="price-increase">+$20</span>':
-          case '+$20':
+          case "+$20":
             setAdditionPrice((prev) => prev - 20);
             break;
           case '2 Years Extended Warranty<span class="price-increase">+$50</span>':
-          case '+$50':
+          case "+$50":
             setAdditionPrice((prev) => prev - 50);
             break;
         }
       }
     } else {
-      if (event.target.classList.contains('price-increase')) {
-        event.target.parentElement.classList.add('picked');
-        event.target.parentElement.classList.add('picked-class');
+      if (event.target.classList.contains("price-increase")) {
+        event.target.parentElement.classList.add("picked");
+        event.target.parentElement.classList.add("picked-class");
       } else {
-        event.target.classList.add('picked');
-        event.target.classList.add('picked-class');
+        event.target.classList.add("picked");
+        event.target.classList.add("picked-class");
         switch (event.target.innerHTML) {
           case 'Cleaning Brushes<span class="price-increase">+$10</span>':
-          case '+$10':
+          case "+$10":
             setAdditionPrice((prev) => prev + 10);
             break;
           case '2L Blender Jar<span class="price-increase">+$20</span>':
-          case '+$20':
+          case "+$20":
             setAdditionPrice((prev) => prev + 20);
             break;
           case '2 Years Extended Warranty<span class="price-increase">+$50</span>':
-          case '+$50':
+          case "+$50":
             setAdditionPrice((prev) => prev + 50);
             break;
         }
@@ -91,28 +91,28 @@ export default function InventoryMain(props) {
 
   function typePick(event) {
     switch (event.target.innerHTML) {
-      case 'Model 3':
-        setPickedType('Normal');
+      case "Model 3":
+        setPickedType("Normal");
         setPickedPrice(329.99);
         break;
       case 'Model 3 Deluxe<span class="price-increase">+$40</span>':
-      case '+$40':
-        setPickedType('Deluxe');
+      case "+$40":
+        setPickedType("Deluxe");
         setPickedPrice(369.99);
         break;
       case 'Model 3 Luxury<span class="price-increase">+$80</span>':
-      case '+$80':
-        setPickedType('Luxury');
+      case "+$80":
+        setPickedType("Luxury");
         setPickedPrice(409.99);
         break;
     }
-    for (let option of document.getElementById('type-buttons').children) {
-      option.classList.remove('picked-class');
+    for (let option of document.getElementById("type-buttons").children) {
+      option.classList.remove("picked-class");
     }
-    if (!event.target.classList.contains('price-increase')) {
-      event.target.classList.add('picked-class');
+    if (!event.target.classList.contains("price-increase")) {
+      event.target.classList.add("picked-class");
     } else {
-      event.target.parentElement.classList.add('picked-class');
+      event.target.parentElement.classList.add("picked-class");
     }
   }
 
@@ -137,33 +137,33 @@ export default function InventoryMain(props) {
         <div className="mb-10 flex w-full items-start justify-evenly font-semibold">
           <div className="flex flex-col items-center gap-1">
             <p className="text-4xl">
-              {pickedType == 'Normal'
-                ? '550'
-                : pickedType == 'Deluxe'
-                  ? '575'
-                  : '625'}
+              {pickedType == "Normal"
+                ? "550"
+                : pickedType == "Deluxe"
+                  ? "575"
+                  : "625"}
               <span className="text-sm">W</span>
             </p>
             <p className="text-gray-500">Wattage</p>
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="text-4xl">
-              {pickedType == 'Normal'
-                ? '1'
-                : pickedType == 'Deluxe'
-                  ? '1.2'
-                  : '1.5'}
+              {pickedType == "Normal"
+                ? "1"
+                : pickedType == "Deluxe"
+                  ? "1.2"
+                  : "1.5"}
               <span className="text-sm">L</span>
             </p>
             <p className="text-gray-500">Capacity</p>
           </div>
           <div className="flex flex-col items-center gap-1">
             <p className="text-4xl">
-              {pickedType == 'Normal'
-                ? '6'
-                : pickedType == 'Deluxe'
-                  ? '8'
-                  : '10'}
+              {pickedType == "Normal"
+                ? "6"
+                : pickedType == "Deluxe"
+                  ? "8"
+                  : "10"}
             </p>
             <p className="text-gray-500">Modes</p>
           </div>
@@ -198,11 +198,11 @@ export default function InventoryMain(props) {
           <ul className="ml-5 list-disc">
             <li>
               Blender Base (
-              {pickedType == 'Normal'
-                ? 'Regular Model'
-                : pickedType == 'Deluxe'
-                  ? 'Deluxe Model'
-                  : 'Luxury Model'}
+              {pickedType == "Normal"
+                ? "Regular Model"
+                : pickedType == "Deluxe"
+                  ? "Deluxe Model"
+                  : "Luxury Model"}
               )
             </li>
             <li> 1L Blender Jar </li>
@@ -213,13 +213,13 @@ export default function InventoryMain(props) {
             <li> Quick Start Guide </li>
             <li> Warranty Information </li>
             <li> Complimentary Blender Bottle Set</li>
-            {pickedType == 'Deluxe' && (
+            {pickedType == "Deluxe" && (
               <>
                 <li> Mini Food Processor Attachment </li>
                 <li>Complimentary Stainless Steel Travel Mug Set</li>
               </>
             )}
-            {pickedType == 'Luxury' && (
+            {pickedType == "Luxury" && (
               <>
                 <li> Vacuum Sealer Starter Kit </li>
                 <li>Complimentary Premium Smoothie Ingredients Bundle</li>
@@ -242,13 +242,13 @@ export default function InventoryMain(props) {
               <li>Chop: Ideal for chopping vegetables and fruits</li>
               <li>Mix: Gentle mixing for batters and doughs</li>
               <li>Pulse: Quick bursts of power for precise control</li>
-              {(pickedType == 'Deluxe' || pickedType == 'Luxury') && (
+              {(pickedType == "Deluxe" || pickedType == "Luxury") && (
                 <>
                   <li>Shred: Shredding for cheese, vegetables, etc.</li>
                   <li>Whip: Whipping for creams and sauces</li>
                 </>
               )}
-              {pickedType == 'Luxury' && (
+              {pickedType == "Luxury" && (
                 <>
                   <li>Knead: Dough kneading for bread and pastry</li>
                   <li>Liquefy: Intense liquefying for smooth beverages</li>
@@ -302,11 +302,11 @@ export default function InventoryMain(props) {
           <div className="flex w-full justify-between">
             <button
               onClick={recipeHandler}
-              className="flex h-11 w-[40%] items-center justify-center rounded-md bg-blue-600 px-14 py-1 text-sm text-white transition-all duration-200"
+              className="flex h-11 w-[40%] items-center justify-center rounded-md bg-blue-600 px-12 py-1 text-sm text-white transition-all duration-200"
             >
               Add
             </button>
-            <button className="flex h-11 w-[40%] items-center justify-center rounded-md bg-gray-200 px-14 py-1 text-sm text-gray-800">
+            <button className="flex h-11 w-[40%] items-center justify-center rounded-md bg-gray-200 px-12 py-1 text-sm text-gray-800">
               Details
             </button>
           </div>

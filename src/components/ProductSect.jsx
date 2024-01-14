@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ProductSect({ productBG, productName, productPrice }) {
   return (
@@ -18,18 +19,18 @@ export default function ProductSect({ productBG, productName, productPrice }) {
         id="model-buttons"
         className="flex w-screen flex-col gap-4 px-6 pb-20 md:flex-row md:justify-center md:pb-16"
       >
-        <button
+        <Link
           to="inventory"
           className="flex h-12 items-center justify-center rounded-md bg-gray-300 bg-opacity-[0.7] font-semibold tracking-wider text-gray-800 transition-all duration-200 hover:bg-opacity-[0.9] md:w-80"
         >
           Purchase Now
-        </button>
-        <button
+        </Link>
+        <Link
           to="inventory"
           className="flex h-12 items-center justify-center rounded-md bg-slate-900 bg-opacity-[0.7] font-semibold tracking-wider text-gray-300 transition-all duration-200 hover:bg-opacity-[0.9] md:w-80"
         >
           Check Specifications
-        </button>
+        </Link>
       </div>
     </section>
   );
