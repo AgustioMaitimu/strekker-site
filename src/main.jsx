@@ -7,12 +7,14 @@ import "./index.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/strekker-site/",
     element: <App />,
-  },
-  {
-    path: "inventory",
-    element: <Inventory />,
+    children: [
+      {
+        path: "/strekker-site/inventory",
+        element: <Inventory />,
+      },
+    ],
   },
 ]);
 
