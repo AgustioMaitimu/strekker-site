@@ -7,37 +7,37 @@ export default function App() {
     <div id="app" className="relative">
       <AppHeader />
       <ProductSect
-        productBG="url('./src/assets/backgrounds/model-3.jpg')"
+        productBG="url('/model-3.jpg')"
         productName="Model 3"
         productPrice="$329.99"
       />
       <ProductSect
-        productBG="url('./src/assets/backgrounds/model-y.jpg')"
+        productBG="url('/model-y.jpg')"
         productName="Model Y"
         productPrice="$379.49"
       />
       <ProductSect
-        productBG="url('./src/assets/backgrounds/model-x.png')"
+        productBG="url('/model-x.png')"
         productName="Model X"
         productPrice="$249.99"
       />
       <ProductSect
-        productBG="url('./src/assets/backgrounds/model-s.png')"
+        productBG="url('/model-s.png')"
         productName="Model S"
         productPrice="$160.49"
       />
       <ProductSect
-        productBG="url('./src/assets/backgrounds/ricecooker.jpg')"
+        productBG="url('/ricecooker.jpg')"
         productName="Franku"
         productPrice="$325.49"
       />
       <ProductSect
-        productBG="url('./src/assets/backgrounds/microwave.jpg')"
+        productBG="url('/microwave.jpg')"
         productName="James"
         productPrice="$415.49"
       />
       <ProductSect
-        productBG="url('./src/assets/backgrounds/gun.jpg')"
+        productBG="url('/gun.jpg')"
         productName="PewPew"
         productPrice="$360.69"
       />
