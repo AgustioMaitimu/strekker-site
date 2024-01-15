@@ -9,12 +9,10 @@ const router = createBrowserRouter([
   {
     path: "/strekker-site/",
     element: <App />,
-    children: [
-      {
-        path: "/strekker-site/inventory",
-        element: <Inventory />,
-      },
-    ],
+  },
+  {
+    path: "/strekker-site/inventory",
+    element: <Inventory />,
   },
 ]);
 
